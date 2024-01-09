@@ -19,6 +19,12 @@
     grid-area: 2/3;
     align-content: center;
 }
+.header:hover{
+    .headerTitles{
+        translate: (100px,0);
+        transition: translate 0.5s;
+    }
+}
 .headerImg{
     border-radius: 50%;
     width: 90px;
@@ -57,6 +63,7 @@
     justify-content: space-around;
     align-items: center;
     margin: 1.5vw;
+    transition: color 0.5s;
 }
 .topNavLink{
     font-size: 1rem;
@@ -65,17 +72,21 @@
     text-decoration: none;
     font-size: 1rem;
     white-space: nowrap;
+    transition: color 0.5s;
 }
-.topNavAboutSvg{
+.topNavSvg{
     width: 20px;
     height: 20px;
     fill: white;
+    transition: fill 0.5s;
 }
-.topNavAboutSvg:hover{
-    fill: hsl(0, 0%, 50%);
-}
-.topNavLink:hover{
-    color: hsl(0, 0%, 50%);
+.topNavItem:hover{
+    .topNavSvg{
+        fill: hsl(0, 0%, 30%);
+    }
+    .topNavLink{
+        color: hsl(0, 0%, 30%);
+    }
 }
 .main{
     grid-row: 4;
@@ -104,22 +115,15 @@
     white-space: nowrap;
 }
 .mainImg{
-    filter: blur(7px);
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
-
 }
-@media screen and (max-width: 768px){
-    .topNav{
-        flex-flow: column nowrap;
-        justify-content: space-between;
-        align-items: flex-start;
-        grid-column: 1;
-    }
-    .topNavLogo{
-        margin-bottom: 1vh;
+.mainBlock:hover{
+    .mainImg{
+        filter: blur(7px);
+        transition: filter 0.5s;
     }
 }
 .mainArticles{
@@ -187,4 +191,13 @@
     grid-column: 2;
     grid-row: 2/4;
     margin: 0 2vw;
+}
+.mainArticleImg{
+    filter: blur(7px);
+    transition: filter 0.5s;
+}
+.mainArticleImgs:hover{
+    .mainArticleImg{
+        filter: blur(0px);
+    }
 }
